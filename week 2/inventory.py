@@ -1,3 +1,19 @@
+import json
+import os
+
+def LoadInventory():
+    try:
+     if os.path.exists("inventory.json"):
+        with open("inventory.json", "r")as f:
+            return json.load(f)
+        
+        return {}
+    except:
+        return {}
+    
+def save_inventory(inventory):
+        with open("week 2/inventory.json", "w")as f:
+            json.dump(inventory, f, indent=4)
 def main():
     inventory = {}
     while True:
@@ -12,6 +28,7 @@ def main():
             name = input("enter product name:")
             quantity = int(input("enter quantity:"))
             inventory[name] = quantity
+            save_inventory(inventory)
             print("Successfully added to stock.")
             
         elif choice == "2":
