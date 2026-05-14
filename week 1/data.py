@@ -7,7 +7,7 @@ with open('sales_data.csv', mode='r')as file:
             product = row['product']
             quantity = int(row['quantity'])
             price = float(row['price'])
-            rev = quantity * price
+            rev = quantity * price      # Calculate revenue for product
             if product in product_total:
                 product_total[product] += rev
             else:
