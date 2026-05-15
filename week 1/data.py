@@ -1,5 +1,5 @@
 import csv
-with open('sales_data.csv', mode='r')as file:
+with open('week 1/sales_data.csv', mode='r')as file:
     reader = csv.DictReader(file)
     product_total={}
     for row in reader:
@@ -7,7 +7,8 @@ with open('sales_data.csv', mode='r')as file:
             product = row['product']
             quantity = int(row['quantity'])
             price = float(row['price'])
-            rev = quantity * price      # Calculate revenue for product
+            rev = quantity * price
+                 # Calculate revenue for product
             if product in product_total:
                 product_total[product] += rev
             else:
