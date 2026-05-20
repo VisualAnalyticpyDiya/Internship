@@ -7,7 +7,7 @@ def LoadInventory():
         with open("inventory.json", "r")as f:
             return json.load(f)
         
-        return {}
+        return {} 
     except:
         return {}
     
