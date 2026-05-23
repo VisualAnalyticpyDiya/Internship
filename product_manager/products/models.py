@@ -1,0 +1,10 @@
+from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=225)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.TextField()
+    stock = models.IntegerField(default=0)
+
+    def __str__(self):
+        return super().__str__()
