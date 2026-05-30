@@ -22,5 +22,6 @@ def product_api(request):
             stock=body['stock']
         )
         return JsonResponse({'message': 'product successfully added!', 'id': new_product.id}, status=201)
+        
+    return JsonResponse({'message': 'Invalid request method'},status=400)
 
-    
